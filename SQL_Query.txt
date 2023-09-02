@@ -1,0 +1,21 @@
+select "Marital Status", avg(age) as "avg_age"
+from "Customer"
+group by "Marital Status" 
+order by "avg_age" desc ;
+
+select "gender" , avg(age) as "avg_age"
+from "Customer"
+group by "gender"  
+order by "avg_age" desc ;
+
+select sum(qty) as totalquantity, storeid 
+from "Transaction"
+group by storeid 
+order by totalquantity desc
+limit 5;
+
+select sum(qty) as totalquantity, sum(totalamount) as totalamount, productid 
+from "Transaction"
+group by productid
+order by totalamount desc
+limit 5;
